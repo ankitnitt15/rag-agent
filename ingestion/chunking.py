@@ -39,7 +39,7 @@ def _pack_sentences(paragraph: str, max_chars: int, overlap_chars: int) -> list[
 def chunk_text(
     text: str, max_chars: int = MAX_CHARS_DEFAULT, overlap_chars: int = OVERLAP_CHARS_DEFAULT
 ) -> list[str]:
-    # Recursive splitting per RagProduction.md: try paragraphs first (one
+    # Try paragraphs first (one
     # paragraph = one chunk, if it fits); only fall back to sentence-level
     # packing for a paragraph that's too long on its own.
     chunks = []
