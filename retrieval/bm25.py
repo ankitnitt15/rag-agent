@@ -39,8 +39,7 @@ class BM25Index:
             for term in term_counts:
                 doc_freq[term] += 1
 
-        # Lucene-style "+1 inside the log" IDF: keeps common terms from
-        # producing a negative score (see session2/bm25.md).
+        # Lucene-style "+1 inside the log" IDF:
         self._idf = {
             term: math.log((n_docs - df + 0.5) / (df + 0.5) + 1)
             for term, df in doc_freq.items()
