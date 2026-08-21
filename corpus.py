@@ -1,8 +1,5 @@
 from shared.models import RawDoc
 
-# A tiny hand-written corpus for Task 0. Each doc is short enough to be its
-# own "chunk" for now -- real chunking (splitting long docs into pieces)
-# is added later once chunking.py exists.
 #
 # Convention: `timestamp` is the reporting *period* the doc is about (e.g. a
 # quarter's end date), not its publish date -- a quarterly report for Q3 is
@@ -110,7 +107,7 @@ DOCS = [
         domain="legal",
     ),
     # Multi-paragraph doc -- the only one that actually exercises chunking.py's
-    # splitter (2 chunks today). Used for the Task 6 reindex demo: adding a
+    # splitter (2 chunks today). adding a
     # 3rd paragraph later should produce 3 chunks, not 2.
     RawDoc(
         doc_id="product-004",
