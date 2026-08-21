@@ -112,10 +112,7 @@ def batch_ingest(
     minhash_index: minhash.MinHashIndex,
     conn,
 ) -> list[IndexResult]:
-    # Loops index_document() in-process. A real Batch API (OpenAI/Gemini batch
-    # endpoints, ~50% cheaper, minutes-to-24h SLA) would instead submit one job
-    # for the whole corpus and poll for completion, rather than embedding each
-    # doc synchronously in a loop as this prototype does.
+    # Loops index_document() in-process.
     results = [
         index_document(doc, qdrant_client, bm25_index, minhash_index, conn) for doc in docs
     ]
